@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generate Favicon</title>
+</head>
+
+<body>
+    <canvas id="c" width="64" height="64"></canvas>
+    <a id="dl" download="favicon.png">Download favicon.png</a>
+    <script>
+        const canvas = document.getElementById('c');
+        const ctx = canvas.getContext('2d');
+
+        // Background
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(0, 0, 64, 64);
+
+        // Border radius via clip (not needed for favicon, simple square)
+        // Text
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 26px Inter, Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('SD', 32, 33);
+
+        // Output
+        document.getElementById('dl').href = canvas.toDataURL('image/png');
+        document.getElementById('dl').click();
+    </script>
+</body>
+
+</html>

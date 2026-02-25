@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sagnik Das – Contact. Get in touch via email, LinkedIn, or GitHub.">
+    <title>Contact | Sagnik Das</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <canvas id="particle-canvas"></canvas>
+    <div class="nav-overlay"></div>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">sagnik<span>.dev</span></a>
+            <nav class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
+                <a href="education.html"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+                <a href="experience.html"><i class="fa-solid fa-briefcase"></i> Experience</a>
+                <a href="skills.html"><i class="fa-solid fa-bolt"></i> Skills</a>
+                <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+                <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn-resume">
+                    <i class="fa-solid fa-file-arrow-down"></i> Resume
+                </a>
+            </nav>
+            <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact</h1>
+            <p class="page-subtitle">Let's connect — I'm open to opportunities and conversations</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Left: Info Cards -->
+                <div>
+                    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:8px;">Get In Touch</h2>
+                    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:28px; line-height:1.7;">
+                        Whether you're a recruiter, a fellow developer, or someone with a project idea — I'd love to
+                        hear from you.
+                        Typically respond within 24 hours.
+                    </p>
+                    <div class="contact-info-list fade-in">
+                        <div class="contact-info-item">
+                            <div class="ci-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <p class="info-label">Email</p>
+                                <p class="info-value"><a href="mailto:sagnik@example.com">sagnik@example.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="ci-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div>
+                                <p class="info-label">LinkedIn</p>
+                                <p class="info-value"><a href="https://linkedin.com/in/sagnikdas" target="_blank"
+                                        rel="noopener">linkedin.com/in/sagnikdas</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="ci-icon"><i class="fa-brands fa-github"></i></div>
+                            <div>
+                                <p class="info-label">GitHub</p>
+                                <p class="info-value"><a href="https://github.com/sagnikdas" target="_blank"
+                                        rel="noopener">github.com/sagnikdas</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="ci-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <p class="info-label">Phone</p>
+                                <p class="info-value">+91 XXXXX XXXXX</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="ci-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <p class="info-label">Location</p>
+                                <p class="info-value">India &nbsp;&bull;&nbsp; Open to Remote</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form Card -->
+                <div class="contact-form-card fade-in">
+                    <h3><i class="fa-solid fa-paper-plane" style="color:var(--accent); margin-right:8px;"></i> Send a
+                        Message</h3>
+                    <p>Fill in the form and I'll get back to you as soon as possible.</p>
+
+                    <form class="contact-form" onsubmit="return handleContactForm(event);">
+                        <div class="form-group">
+                            <label for="name"><i class="fa-solid fa-user"></i> Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fa-solid fa-envelope"></i> Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject"><i class="fa-solid fa-tag"></i> Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Internship Opportunity">
+                        </div>
+                        <div class="form-group">
+                            <label for="message"><i class="fa-solid fa-comment-dots"></i> Message</label>
+                            <textarea id="message" name="message" placeholder="Hi Sagnik, I'd like to discuss..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">sagnik<span>.dev</span></a>
+                    <p>CS student &amp; full-stack developer building clean, performant web applications.</p>
+                    <div class="footer-socials">
+                        <a href="https://github.com/sagnikdas" target="_blank" class="footer-social-link"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/sagnikdas" target="_blank" class="footer-social-link"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:sagnik@example.com" class="footer-social-link"><i
+                                class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Navigation</h5>
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-chevron-right fa-xs"></i> Home</a></li>
+                        <li><a href="projects.html"><i class="fa-solid fa-chevron-right fa-xs"></i> Projects</a></li>
+                        <li><a href="education.html"><i class="fa-solid fa-chevron-right fa-xs"></i> Education</a></li>
+                        <li><a href="experience.html"><i class="fa-solid fa-chevron-right fa-xs"></i> Experience</a>
+                        </li>
+                        <li><a href="skills.html"><i class="fa-solid fa-chevron-right fa-xs"></i> Skills</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-chevron-right fa-xs"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><a href="mailto:sagnik@example.com"><i class="fa-solid fa-envelope fa-xs"></i>
+                                sagnik@example.com</a></li>
+                        <li><a href="https://linkedin.com/in/sagnikdas" target="_blank"><i
+                                    class="fa-brands fa-linkedin-in fa-xs"></i> LinkedIn</a></li>
+                        <li><a href="https://github.com/sagnikdas" target="_blank"><i
+                                    class="fa-brands fa-github fa-xs"></i> GitHub</a></li>
+                        <li><a href="assets/resume.pdf" target="_blank"><i class="fa-solid fa-file-pdf fa-xs"></i>
+                                Resume</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <a href="index.html">Sagnik Das</a>. All rights reserved.</p>
+                <p>Built with <i class="fa-solid fa-heart" style="color:var(--accent);"></i> using HTML, CSS &amp;
+                    Vanilla JS</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/background.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function handleContactForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value || 'Contact from Portfolio';
+            const message = document.getElementById('message').value;
+            const body = `Name: ${name}%0AEmail: ${email}%0A%0A${encodeURIComponent(message)}`;
+            window.open(`mailto:sagnik@example.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_self');
+            return false;
+        }
+    </script>
+</body>
+
+</html>
