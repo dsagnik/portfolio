@@ -25,7 +25,9 @@
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <a href="index.html" class="logo">sagnik<span>.dev</span></a>
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Sagnik Das Logo">
+      </a>
       <nav class="nav-links">
         <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
         <a href="projects.html"><i class="fa-solid fa-code"></i> Projects</a>
@@ -48,13 +50,16 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <p class="hero-greeting"><i class="fa-solid fa-terminal"></i> Hello, I'm</p>
+        <p class="hero-greeting">
+          <i class="fa-solid fa-terminal"></i>
+          <span id="typing-text"></span>
+        </p>
         <h1 class="hero-name">Sagnik Das</h1>
-        <p class="hero-title">Full-Stack Developer &amp; Computer Science Student</p>
+        <p class="hero-title">Computer Science Student | Aspiring AI &amp; Full-Stack Developer</p>
         <p class="hero-summary">
-          I build performant, scalable web applications and enjoy working across the full
-          stack — from clean, accessible frontends to robust backend services. Currently
-          pursuing B.Tech in CSE while contributing to real-world projects.
+          I develop web applications with a focus on clean frontend structure, logical backend integration, and
+          performance fundamentals. Alongside my academic journey in B.Tech CSE, I actively explore AI tools and their
+          practical application in real-world projects.
         </p>
         <div class="hero-buttons">
           <a href="projects.html" class="btn-primary">
@@ -76,23 +81,19 @@
       <div class="stats-grid">
         <div class="stat-card fade-in">
           <div class="stat-number">6+</div>
-          <div class="stat-label"><i class="fa-solid fa-folder" style="color:var(--accent);margin-right:4px;"></i>
-            Projects</div>
+          <div class="stat-label"></i>Projects</div>
         </div>
         <div class="stat-card fade-in">
-          <div class="stat-number">2+</div>
-          <div class="stat-label"><i class="fa-solid fa-briefcase" style="color:var(--accent);margin-right:4px;"></i>
-            Internships</div>
+          <div class="stat-number">1+</div>
+          <div class="stat-label"></i>Internships</div>
         </div>
         <div class="stat-card fade-in">
-          <div class="stat-number">8.5</div>
-          <div class="stat-label"><i class="fa-solid fa-star" style="color:var(--accent);margin-right:4px;"></i> CGPA
-          </div>
+          <div class="stat-number">8</div>
+          <div class="stat-label"></i>CGPA</div>
         </div>
         <div class="stat-card fade-in">
-          <div class="stat-number">10+</div>
-          <div class="stat-label"><i class="fa-solid fa-layer-group" style="color:var(--accent);margin-right:4px;"></i>
-            Technologies</div>
+          <div class="stat-number">5+</div>
+          <div class="stat-label"></i>Hackathon Finalist</div>
         </div>
       </div>
     </div>
@@ -106,23 +107,38 @@
     <div class="slider-track-wrapper">
       <div class="slider-track">
         <!-- First set -->
-        <div class="company-logo"><span class="company-name-placeholder">TechCorp</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">StartupXYZ</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">InnovateLabs</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">DevStudio</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">CodeForge</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">ByteWorks</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">NexGen</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">OpenSource Co.</span></div>
+        <div class="company-logo"><img src="assets/images/companies/accenture.png" alt="Accenture Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/capgemini.png" alt="Capgemini Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/deloitte.png" alt="Deloitte Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/epam.png" alt="EPAM Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/genpact.png" alt="Genpact Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/infosys.png" alt="Infosys Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/sutherland.png" alt="Sutherland Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/tcs.png" alt="TCS Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/techmahindra.png" alt="TechMahindra Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/wipro.png" alt="Wipro Logo"></div>
         <!-- Duplicate for seamless loop -->
-        <div class="company-logo"><span class="company-name-placeholder">TechCorp</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">StartupXYZ</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">InnovateLabs</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">DevStudio</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">CodeForge</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">ByteWorks</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">NexGen</span></div>
-        <div class="company-logo"><span class="company-name-placeholder">OpenSource Co.</span></div>
+        <div class="company-logo"><img src="assets/images/companies/accenture.png" alt="Accenture Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/capgemini.png" alt="Capgemini Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/deloitte.png" alt="Deloitte Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/epam.png" alt="EPAM Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/genpact.png" alt="Genpact Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/infosys.png" alt="Infosys Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/sutherland.png" alt="Sutherland Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/tcs.png" alt="TCS Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/techmahindra.png" alt="TechMahindra Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/wipro.png" alt="Wipro Logo"></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="company-logo"><img src="assets/images/companies/accenture.png" alt="Accenture Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/capgemini.png" alt="Capgemini Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/deloitte.png" alt="Deloitte Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/epam.png" alt="EPAM Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/genpact.png" alt="Genpact Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/infosys.png" alt="Infosys Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/sutherland.png" alt="Sutherland Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/tcs.png" alt="TCS Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/techmahindra.png" alt="TechMahindra Logo"></div>
+        <div class="company-logo"><img src="assets/images/companies/wipro.png" alt="Wipro Logo"></div>
       </div>
     </div>
   </section>
@@ -136,20 +152,20 @@
         <div class="service-card fade-in">
           <div class="service-icon"><i class="fa-solid fa-display"></i></div>
           <h4>Frontend Development</h4>
-          <p>Building pixel-perfect, responsive interfaces using React, and modern CSS — optimised for performance and
-            accessibility.</p>
+          <p>Building responsive and interactive user interfaces using HTML, CSS, and JavaScript.
+            Experienced in modern layouts, animations, DOM manipulation, and performance-focused design.</p>
         </div>
         <div class="service-card fade-in">
-          <div class="service-icon"><i class="fa-solid fa-server"></i></div>
-          <h4>Backend Development</h4>
-          <p>Designing RESTful APIs and server-side logic with Node.js and Python, backed by relational and NoSQL
-            databases.</p>
+          <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+          <h4>Web Application Development</h4>
+          <p>Building browser-based tools for data handling, automation, and improving workflow efficiency
+            using JavaScript.</p>
         </div>
         <div class="service-card fade-in">
-          <div class="service-icon"><i class="fa-solid fa-database"></i></div>
-          <h4>Database Design</h4>
-          <p>Modelling efficient schemas for MongoDB, PostgreSQL, and MySQL — with attention to indexing, queries, and
-            scaling.</p>
+          <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+          <h4>UI Implementation</h4>
+          <p>Converting design concepts into functional user interfaces with attention to detail,
+            consistency, and visual quality.</p>
         </div>
         <div class="service-card fade-in">
           <div class="service-icon"><i class="fa-brands fa-github"></i></div>
@@ -158,10 +174,10 @@
             practices.</p>
         </div>
         <div class="service-card fade-in">
-          <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <h4>API Integration</h4>
-          <p>Integrating third-party services, payment gateways, and real-time communication layers into production
-            applications.</p>
+          <div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h4>Problem Solving</h4>
+          <p>Analyzing problems, debugging issues, and developing logical solutions to improve application
+            functionality and performance.</p>
         </div>
         <div class="service-card fade-in">
           <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
@@ -177,34 +193,36 @@
   <section class="section" style="padding-top: 20px;">
     <div class="container">
       <h2 class="section-title fade-in">Featured Project</h2>
-      <p class="section-subtitle fade-in">My strongest and most impactful build</p>
+      <p class="section-subtitle fade-in">Solar analysis and shadow simulation tool featured at <b>IIT Kharagpur</b></p>
       <div class="featured-project fade-in">
         <div class="featured-project-info">
-          <h3>Smart Task Management Platform</h3>
-          <p>
-            A full-stack task management application with real-time collaboration,
-            role-based access control, and intelligent task prioritisation powered
-            by a custom ranking algorithm. Built to streamline distributed team productivity.
+          <h3>SolAxis - Daylight & Sun Path Analyzer</h3>
+          <br>
+          <p>SolAxis is a scientific desktop application that calculates solar altitude, azimuth, daylight duration,
+            and shadow projections based on geographic location, date, and object height. It provides interactive
+            visualizations and exports analytical data for architectural planning and solar studies. The tool was
+            recognized and featured at IIT Kharagpur for its practical engineering application and accurate solar
+            modeling.
           </p>
           <div class="featured-project-tags">
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">Socket.io</span>
-            <span class="tag">JWT</span>
+            <span class="tag">Python</span>
+            <span class="tag">PyQt6</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Scientific Computing</span>
           </div>
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
             <a href="projects.html" class="btn-primary">
               <i class="fa-solid fa-arrow-right"></i> All Projects
             </a>
-            <a href="https://github.com/sagnikdas" target="_blank" class="btn-secondary">
+            <a href="https://github.com/dsagnik/SolAxis" target="_blank" class="btn-secondary">
               <i class="fa-brands fa-github"></i> GitHub
             </a>
           </div>
         </div>
         <div class="featured-project-image">
-          <span class="placeholder"><i class="fa-regular fa-image"
-              style="font-size:1.5rem; margin-bottom:8px; display:block;"></i> Project Screenshot</span>
+          <img src="assets/images/projects/solaxis.png" alt="SolAxis">
         </div>
       </div>
     </div>
@@ -238,18 +256,19 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">sagnik<span>.dev</span></a>
-          <p>CS student &amp; full-stack developer building clean, performant web applications. Open to internships and
-            collaborative projects.</p>
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logo.png" alt="Sagnik Das Logo">
+          </a>
+          <br>
+          <p><b>CS student &amp; full-stack developer building clean, performant web applications.</p></b>
           <div class="footer-socials">
-            <a href="https://github.com/sagnikdas" target="_blank" class="footer-social-link" aria-label="GitHub">
+            <a href="https://github.com/dsagnik" target="_blank" class="footer-social-link" aria-label="GitHub">
               <i class="fa-brands fa-github"></i>
             </a>
-            <a href="https://linkedin.com/in/sagnikdas" target="_blank" class="footer-social-link"
-              aria-label="LinkedIn">
+            <a href="https://linkedin.com/in/dsagnik" target="_blank" class="footer-social-link" aria-label="LinkedIn">
               <i class="fa-brands fa-linkedin-in"></i>
             </a>
-            <a href="mailto:sagnik@example.com" class="footer-social-link" aria-label="Email">
+            <a href="mailto:sagnikedu@gmail.com" class="footer-social-link" aria-label="Email">
               <i class="fa-solid fa-envelope"></i>
             </a>
           </div>
@@ -269,21 +288,21 @@
         <div class="footer-col">
           <h5>Contact</h5>
           <ul>
-            <li><a href="mailto:sagnik@example.com"><i class="fa-solid fa-envelope fa-xs"></i> sagnik@example.com</a>
+            <li><a href="mailto:sagnikedu@gmail.com"><i class="fa-solid fa-envelope fa-xs"></i>
+                sagnikedu@gmail.com</a>
             </li>
-            <li><a href="https://linkedin.com/in/sagnikdas" target="_blank"><i
-                  class="fa-brands fa-linkedin-in fa-xs"></i> LinkedIn</a></li>
-            <li><a href="https://github.com/sagnikdas" target="_blank"><i class="fa-brands fa-github fa-xs"></i>
+            <li><a href="https://linkedin.com/in/dsagnik" target="_blank"><i class="fa-brands fa-linkedin-in fa-xs"></i>
+                LinkedIn</a></li>
+            <li><a href="https://github.com/dsagnik" target="_blank"><i class="fa-brands fa-github fa-xs"></i>
                 GitHub</a></li>
-            <li><a href="assets/resume.pdf" target="_blank"><i class="fa-solid fa-file-pdf fa-xs"></i> Resume / CV</a>
+            <li><a href="assets/resume.pdf" target="_blank"><i class="fa-solid fa-file-pdf fa-xs"></i>
+                Resume / CV</a>
             </li>
           </ul>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 <a href="index.html">Sagnik Das</a>. All rights reserved.</p>
-        <p>Built with <i class="fa-solid fa-heart" style="color:var(--accent);"></i> using HTML, CSS &amp; Vanilla JS
-        </p>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year-range"></span> <a href="index.html">Sagnik Das</a>. All rights reserved.</p>
+        </div>
       </div>
     </div>
   </footer>

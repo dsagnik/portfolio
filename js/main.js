@@ -136,3 +136,99 @@
     });
 
 })();
+
+const typingText = " Hello, I'm";
+const typingSpeed = 200;
+let typingIndex = 0;
+
+function typeEffect() {
+    const element = document.getElementById("typing-text");
+
+    if (!element) return; // prevents errors if element not found
+
+    if (typingIndex < typingText.length) {
+        element.textContent += typingText.charAt(typingIndex);
+        typingIndex++;
+        setTimeout(typeEffect, typingSpeed);
+    }
+}
+
+// run after page loads
+document.addEventListener("DOMContentLoaded", typeEffect);
+
+// experience duration update
+function updateDuration(startYear, startMonth, elementId) {
+    const start = new Date(startYear, startMonth - 1);
+    const now = new Date();
+
+    let totalMonths =
+        (now.getFullYear() - start.getFullYear()) * 12 +
+        (now.getMonth() - start.getMonth());
+
+    if (totalMonths < 0) totalMonths = 0;
+
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    let result = "";
+
+    if (years > 0) {
+        result += years + (years === 1 ? " yr " : " Years ");
+    }
+
+    if (months > 0 || years === 0) {
+        result += months + (months === 1 ? " mo" : " Months ");
+    }
+
+    document.getElementById(elementId).textContent = result.trim();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateDuration(2025, 12, "associate-duration");
+});
+
+// Auto Update Footer Year Range
+document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("year-range");
+
+    console.log("yearSpan found:", yearSpan);
+
+    if (!yearSpan) return;
+
+    const startYear = 2025;
+    const currentYear = new Date().getFullYear();
+
+    yearSpan.textContent =
+        startYear === currentYear
+            ? currentYear
+            : `${startYear}–${currentYear}`;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const filterButtons = document.querySelectorAll(".cert-filter-btn");
+    const certCards = document.querySelectorAll(".cert-card");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+
+            // Remove active class from all
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const filterValue = button.getAttribute("data-filter");
+
+            certCards.forEach(card => {
+                const category = card.getAttribute("data-category");
+
+                if (filterValue === "all" || category === filterValue) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+        });
+    });
+
+});
