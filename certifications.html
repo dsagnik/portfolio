@@ -58,19 +58,26 @@
             <!-- Stats Strip -->
             <div class="cert-stats fade-in">
                 <div class="cs-item">
-                    <div class="cs-num" id="total-certs">7</div>
+                    <div class="cs-num" id="stat-total-certs">0</div>
                     <div class="cs-label">Total<br>Certificates</div>
                 </div>
                 <div style="width:1px; background:var(--glass-border);"></div>
                 <div class="cs-item">
-                    <div class="cs-num">3</div>
+                    <div class="cs-num" id="stat-platforms">0</div>
                     <div class="cs-label">Issuing<br>Platforms</div>
                 </div>
                 <div style="width:1px; background:var(--glass-border);"></div>
                 <div class="cs-item">
-                    <div class="cs-num">2026</div>
+                    <div class="cs-num" id="stat-latest-year">-</div>
                     <div class="cs-label">Latest<br>Credential</div>
                 </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="cert-search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="cert-search" placeholder="Search certificates by name, issuer, or skill..."
+                    autocomplete="off">
             </div>
 
             <!-- Filter Bar -->
@@ -108,7 +115,7 @@
                         </div>
                     </div>
                     <div class="cert-meta">
-                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Oct 2025</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Feb 2026</span>
                         <span class="cert-meta-item"><i class="fa-solid fa-hourglass-half"></i> No Expiry</span>
                         <span class="cert-meta-item"><i class="fa-solid fa-fingerprint"></i> <span
                                 class="cert-id">Credential Available on LinkedIn</span></span>
@@ -122,6 +129,138 @@
                     <div class="cert-footer">
                         <a href="#" target="_blank" class="cert-link"><i
                                 class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Credential</a>
+                    </div>
+                </div>
+
+                <!-- ── FedEx SMART Hackathon ── -->
+                <div class="cert-card fade-in" data-category="hackathon">
+                    <div class="cert-card-header">
+                        <div class="cert-issuer-logo"><i class="fa-solid fa-robot"></i></div>
+                        <div class="cert-card-header-text">
+                            <h3>FedEx SMART Hackathon</h3>
+                            <span class="cert-issuer"><i class="fa-solid fa-building"></i> IIT, Madras</span>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Feb 2026</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-hourglass-end"></i> No Expiry</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-fingerprint"></i> <span
+                                class="cert-id">Credential Available on LinkedIn</span></span>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://unstop.com/certificate-preview/101779e4-a936-4314-9306-8e339e6b9755"
+                            target="_blank" class="cert-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Credential</a>
+                    </div>
+                </div>
+
+                <!-- ── The Delhivery Way ── -->
+                <div class="cert-card fade-in" data-category="hackathon">
+                    <div class="cert-card-header">
+                        <div class="cert-issuer-logo"><i class="fa-solid fa-robot"></i></div>
+                        <div class="cert-card-header-text">
+                            <h3>The Delhivery Way - A Case Study Competition</h3>
+                            <span class="cert-issuer"><i class="fa-solid fa-building"></i> IIT, Kharagpur</span>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Feb 2026</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-hourglass-end"></i> No Expiry</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-fingerprint"></i> <span
+                                class="cert-id">Credential Available on LinkedIn</span></span>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://unstop.com/certificate-preview/cca45dc8-478e-469e-8b03-74db3928fdaf"
+                            target="_blank" class="cert-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Credential</a>
+                    </div>
+                </div>
+
+                <!-- ── Strat Quest ── -->
+                <div class="cert-card fade-in" data-category="hackathon">
+                    <div class="cert-card-header">
+                        <div class="cert-issuer-logo"><i class="fa-solid fa-robot"></i></div>
+                        <div class="cert-card-header-text">
+                            <h3>Strat Quest</h3>
+                            <span class="cert-issuer"><i class="fa-solid fa-building"></i> IIT, Kharagpur</span>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Jan 2026</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-hourglass-end"></i> No Expiry</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-fingerprint"></i> <span
+                                class="cert-id">Credential Available on LinkedIn</span></span>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://unstop.com/certificate-preview/4e7850df-bd72-4b13-ad03-7f319d017fcb"
+                            target="_blank" class="cert-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Credential</a>
+                    </div>
+                </div>
+
+                <!-- ── Equity Research ── -->
+                <div class="cert-card fade-in" data-category="hackathon">
+                    <div class="cert-card-header">
+                        <div class="cert-issuer-logo"><i class="fa-solid fa-robot"></i></div>
+                        <div class="cert-card-header-text">
+                            <h3>Equity Research Challenge 2025-26</h3>
+                            <span class="cert-issuer"><i class="fa-solid fa-building"></i> IIT, Guwahati</span>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Jan 2026</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-hourglass-end"></i> No Expiry</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-fingerprint"></i> <span
+                                class="cert-id">Credential Available on LinkedIn</span></span>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://unstop.com/certificate-preview/29e00b7a-2a43-48c4-bbd1-7ee981d4976b"
+                            target="_blank" class="cert-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Credential</a>
+                    </div>
+                </div>
+
+                <!-- ── Encode 2026 ── -->
+                <div class="cert-card fade-in" data-category="hackathon">
+                    <div class="cert-card-header">
+                        <div class="cert-issuer-logo"><i class="fa-solid fa-robot"></i></div>
+                        <div class="cert-card-header-text">
+                            <h3>EnCode 2026: Code To Innovate</h3>
+                            <span class="cert-issuer"><i class="fa-solid fa-building"></i> IIT, Guwahati</span>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Jan 2026</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-hourglass-end"></i> No Expiry</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-fingerprint"></i> <span
+                                class="cert-id">Credential Available on LinkedIn</span></span>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://unstop.com/certificate-preview/2c5993e8-7f32-430a-8399-313199135f52"
+                            target="_blank" class="cert-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Credential</a>
+                    </div>
+                </div>
+
+                <!-- ── 24 hrs Hackathon ── -->
+                <div class="cert-card fade-in" data-category="hackathon">
+                    <div class="cert-card-header">
+                        <div class="cert-issuer-logo"><i class="fa-solid fa-robot"></i></div>
+                        <div class="cert-card-header-text">
+                            <h3>24 hrs Hackathon of Byte Quest – AI Vibe Coding Challenge 2026</h3>
+                            <span class="cert-issuer"><i class="fa-solid fa-building"></i> GeeksforGeeks</span>
+                        </div>
+                    </div>
+                    <div class="cert-meta">
+                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Jan 2026</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-hourglass-end"></i> No Expiry</span>
+                        <span class="cert-meta-item"><i class="fa-solid fa-fingerprint"></i> <span
+                                class="cert-id">Credential Available on LinkedIn</span></span>
+                    </div>
+                    <div class="cert-footer">
+                        <a href="https://unstop.com/certificate-preview/3932c4e6-33fb-4839-be6b-d48eb8ca212a"
+                            target="_blank" class="cert-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>
                             View Credential</a>
                     </div>
                 </div>
@@ -266,26 +405,10 @@
                     </div>
                 </div>
 
-                <!-- ── 24 hrs Hackathon ── -->
-                <div class="cert-card fade-in" data-category="hackathon">
-                    <div class="cert-card-header">
-                        <div class="cert-issuer-logo"><i class="fa-solid fa-robot"></i></div>
-                        <div class="cert-card-header-text">
-                            <h3>24 hrs Hackathon of Byte Quest – AI Vibe Coding Challenge 2026</h3>
-                            <span class="cert-issuer"><i class="fa-solid fa-building"></i> GeeksforGeeks</span>
-                        </div>
-                    </div>
-                    <div class="cert-meta">
-                        <span class="cert-meta-item"><i class="fa-solid fa-calendar-check"></i> Issued: Jan 2026</span>
-                        <span class="cert-meta-item"><i class="fa-solid fa-hourglass-end"></i> No Expiry</span>
-                        <span class="cert-meta-item"><i class="fa-solid fa-fingerprint"></i> <span
-                                class="cert-id">Credential Available on LinkedIn</span></span>
-                    </div>
-                    <div class="cert-footer">
-                        <a href="https://unstop.com/certificate-preview/3932c4e6-33fb-4839-be6b-d48eb8ca212a"
-                            target="_blank" class="cert-link"><i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            View Credential</a>
-                    </div>
+                <!-- No results message -->
+                <div class="cert-no-results" id="cert-no-results">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    No certificates found matching your search.
                 </div>
 
             </div><!-- /cert-grid -->

@@ -208,27 +208,123 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const filterButtons = document.querySelectorAll(".cert-filter-btn");
     const certCards = document.querySelectorAll(".cert-card");
+    const searchInput = document.getElementById("cert-search");
+    const noResults = document.getElementById("cert-no-results");
 
-    filterButtons.forEach(button => {
-        button.addEventListener("click", () => {
+    // Guard – only run on certifications page
+    if (!certCards.length) return;
 
-            // Remove active class from all
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            button.classList.add("active");
+    // ---- Auto-count Stats ----
+    function computeStats() {
+        const totalEl = document.getElementById("stat-total-certs");
+        const platformsEl = document.getElementById("stat-platforms");
+        const latestEl = document.getElementById("stat-latest-year");
 
-            const filterValue = button.getAttribute("data-filter");
+        if (!totalEl) return;
 
-            certCards.forEach(card => {
-                const category = card.getAttribute("data-category");
+        // Total certificates = number of cert-card elements
+        const total = certCards.length;
 
-                if (filterValue === "all" || category === filterValue) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
+        // Unique issuing platforms
+        const issuers = new Set();
+        certCards.forEach(card => {
+            const issuerEl = card.querySelector(".cert-issuer");
+            if (issuerEl) {
+                // Strip icon text, get just the issuer name
+                const name = issuerEl.textContent.trim().toLowerCase();
+                issuers.add(name);
+            }
+        });
+
+        // Latest credential year – parse from "Issued: Mon YYYY"
+        let latestYear = 0;
+        certCards.forEach(card => {
+            const metaItems = card.querySelectorAll(".cert-meta-item");
+            metaItems.forEach(item => {
+                const text = item.textContent;
+                const match = text.match(/Issued:\s*\w+\s+(\d{4})/);
+                if (match) {
+                    const year = parseInt(match[1], 10);
+                    if (year > latestYear) latestYear = year;
                 }
             });
+        });
 
+        // Animate count up
+        animateCount(totalEl, total);
+        animateCount(platformsEl, issuers.size);
+        if (latestYear > 0) {
+            animateCount(latestEl, latestYear);
+        }
+    }
+
+    function animateCount(el, target) {
+        if (!el) return;
+        const duration = 1200;
+        const start = performance.now();
+        const startVal = 0;
+
+        function tick(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // ease-out cubic
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(startVal + (target - startVal) * ease);
+            el.textContent = current;
+            if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    computeStats();
+
+    // ---- Combined Filter + Search ----
+    let activeFilter = "all";
+    let searchQuery = "";
+
+    function applyFilters() {
+        let visibleCount = 0;
+
+        certCards.forEach(card => {
+            const category = card.getAttribute("data-category") || "";
+            const matchesFilter = activeFilter === "all" || category === activeFilter;
+
+            let matchesSearch = true;
+            if (searchQuery) {
+                const cardText = card.textContent.toLowerCase();
+                matchesSearch = cardText.includes(searchQuery);
+            }
+
+            if (matchesFilter && matchesSearch) {
+                card.style.display = "flex";
+                visibleCount++;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        // Show/hide no-results message
+        if (noResults) {
+            noResults.style.display = visibleCount === 0 ? "block" : "none";
+        }
+    }
+
+    // Filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+            activeFilter = button.getAttribute("data-filter");
+            applyFilters();
         });
     });
+
+    // Search input
+    if (searchInput) {
+        searchInput.addEventListener("input", () => {
+            searchQuery = searchInput.value.trim().toLowerCase();
+            applyFilters();
+        });
+    }
 
 });
