@@ -78,22 +78,22 @@
     <div class="container">
       <h2 class="section-title fade-in">At a Glance</h2>
       <p class="section-subtitle fade-in">Numbers that define my journey</p>
-      <div class="stats-grid">
+      <div class="stats-grid" id="stats-grid">
         <div class="stat-card fade-in">
-          <div class="stat-number">6+</div>
-          <div class="stat-label"></i>Projects</div>
+          <div class="stat-number" data-target="6" data-suffix="+">0</div>
+          <div class="stat-label">Projects</div>
         </div>
         <div class="stat-card fade-in">
-          <div class="stat-number">1+</div>
-          <div class="stat-label"></i>Internships</div>
+          <div class="stat-number" data-target="1" data-suffix="+">0</div>
+          <div class="stat-label">Internships</div>
         </div>
         <div class="stat-card fade-in">
-          <div class="stat-number">8</div>
-          <div class="stat-label"></i>CGPA</div>
+          <div class="stat-number" data-target="8" data-suffix="">0</div>
+          <div class="stat-label">CGPA</div>
         </div>
         <div class="stat-card fade-in">
-          <div class="stat-number">5+</div>
-          <div class="stat-label"></i>Hackathon Finalist</div>
+          <div class="stat-number" data-target="5" data-suffix="+">0</div>
+          <div class="stat-label">Hackathon Finalist</div>
         </div>
       </div>
     </div>
@@ -309,6 +309,43 @@
 
   <script src="js/background.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    // Count-up animation for At a Glance stats
+    (function () {
+      const statsGrid = document.getElementById('stats-grid');
+      if (!statsGrid) return;
+
+      let animated = false;
+
+      function animateStat(el, target, suffix) {
+        const duration = 1200;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(target * ease) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            statsGrid.querySelectorAll('.stat-number[data-target]').forEach(function (el) {
+              const target = parseInt(el.dataset.target, 10);
+              const suffix = el.dataset.suffix || '';
+              animateStat(el, target, suffix);
+            });
+            observer.unobserve(statsGrid);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(statsGrid);
+    })();
+  </script>
 </body>
 
 </html>
