@@ -84,7 +84,7 @@
                             <div class="ci-icon"><i class="fa-brands fa-linkedin-in"></i></div>
                             <div>
                                 <p class="info-label">LinkedIn</p>
-                                <p class="info-value"><a href="https://linkedin.com/in/sagnikdas" target="_blank"
+                                <p class="info-value"><a href="https://linkedin.com/in/dsagnik" target="_blank"
                                         rel="noopener">linkedin.com/in/dsagnik</a></p>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                             <div class="ci-icon"><i class="fa-brands fa-github"></i></div>
                             <div>
                                 <p class="info-label">GitHub</p>
-                                <p class="info-value"><a href="https://github.com/sagnikdas" target="_blank"
+                                <p class="info-value"><a href="https://github.com/dsagnik" target="_blank"
                                         rel="noopener">github.com/dsagnik</a></p>
                             </div>
                         </div>
@@ -105,28 +105,50 @@
                         Message</h3>
                     <p>Fill in the form and I'll get back to you as soon as possible.</p>
 
-                    <form class="contact-form" onsubmit="return handleContactForm(event);">
+                    <!-- Hidden iframe for Google Forms submission -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+                    <form class="contact-form" id="contactForm"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSdsiMD7nXPWFKQ0LmrzrJEWlYH89604XNLkAekpCgoMGyercg/formResponse"
+                        method="POST" target="hidden_iframe" onsubmit="handleContactForm();">
                         <div class="form-group">
                             <label for="name"><i class="fa-solid fa-user"></i> Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            <input type="text" id="name" name="entry.743159110" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="email"><i class="fa-solid fa-envelope"></i> Your Email</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <input type="email" id="email" name="entry.589743206" placeholder="john@example.com"
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="subject"><i class="fa-solid fa-tag"></i> Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="Internship Opportunity">
+                            <input type="text" id="subject" name="entry.1303184724"
+                                placeholder="Internship Opportunity">
                         </div>
                         <div class="form-group">
                             <label for="message"><i class="fa-solid fa-comment-dots"></i> Message</label>
-                            <textarea id="message" name="message" placeholder="Hi Sagnik, I'd like to discuss..."
+                            <textarea id="message" name="entry.90187781" placeholder="Hi Sagnik, I'd like to discuss..."
                                 required></textarea>
                         </div>
-                        <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+                        <button type="submit" class="btn-primary" id="submitBtn"
+                            style="width:100%; justify-content:center;">
                             <i class="fa-solid fa-paper-plane"></i> Send Message
                         </button>
                     </form>
+
+                    <!-- Confirmation Message -->
+                    <div id="confirmationMsg" style="display:none; text-align:center; padding:40px 20px;">
+                        <div style="font-size:3rem; margin-bottom:16px; animation: popIn 0.5s ease;">
+                            <i class="fa-solid fa-circle-check" style="color: var(--accent);"></i>
+                        </div>
+                        <h3 style="margin-bottom:8px; font-size:1.3rem;">Message Sent!</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.7; margin-bottom:24px;">
+                            Thank you for reaching out! I'll get back to you within 24 hours.
+                        </p>
+                        <button class="btn-primary" onclick="resetContactForm();" style="margin:0 auto;">
+                            <i class="fa-solid fa-arrow-rotate-left"></i> Send Another Message
+                        </button>
+                    </div>
                 </div>
 
             </div>
@@ -189,18 +211,63 @@
         </div>
     </footer>
 
+    <style>
+        @keyframes popIn {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        #confirmationMsg {
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
     <script src="js/background.js"></script>
     <script src="js/main.js"></script>
     <script>
-        function handleContactForm(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value || 'Contact from Portfolio';
-            const message = document.getElementById('message').value;
-            const body = `Name: ${name}%0AEmail: ${email}%0A%0A${encodeURIComponent(message)}`;
-            window.open(`mailto:sagnik@example.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_self');
-            return false;
+        function handleContactForm() {
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+            // Give the form time to submit via iframe, then show confirmation
+            setTimeout(function () {
+                document.getElementById('contactForm').style.display = 'none';
+                document.getElementById('confirmationMsg').style.display = 'block';
+            }, 1500);
+        }
+
+        function resetContactForm() {
+            const form = document.getElementById('contactForm');
+            form.reset();
+            form.style.display = 'flex';
+            document.getElementById('confirmationMsg').style.display = 'none';
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
         }
     </script>
 </body>
