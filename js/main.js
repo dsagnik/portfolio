@@ -184,7 +184,7 @@ function updateDuration(startYear, startMonth, elementId) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    updateDuration(2025, 12, "associate-duration");
+    updateDuration(2026, 2, "work-duration");
 });
 
 // Auto Update Footer Year Range
