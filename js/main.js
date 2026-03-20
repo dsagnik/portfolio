@@ -173,11 +173,11 @@ function updateDuration(startYear, startMonth, elementId) {
     let result = "";
 
     if (years > 0) {
-        result += years + (years === 1 ? " yr " : " Years ");
+        result += years + (years === 1 ? " Years " : " Years ");
     }
 
     if (months > 0 || years === 0) {
-        result += months + (months === 1 ? " mo" : " Months ");
+        result += months + (months === 1 ? " Months" : " Months ");
     }
 
     document.getElementById(elementId).textContent = result.trim();
